@@ -19,11 +19,13 @@ export default (props) => {
             style="warning"
             icon="undo"
             onClick={() => props.handleMarkAsPending(todo)}
+            className="ml-2"
           ></IconButton>
           <IconButton
             style="danger"
             icon="trash-o"
             onClick={() => props.handleRemove(todo)}
+            className="ml-2"
           ></IconButton>
         </td>
       </tr>
