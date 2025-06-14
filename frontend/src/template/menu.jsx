@@ -8,17 +8,14 @@ export default (props) => (
           <i className="fa fa-calendar-check-o"></i> TodoApp
         </a>
       </div>
-
-      <div id="navbar" className="navbar-collapse collapse">
-        <ul className="nav navbar-nav">
-          <li>
-            <a href="#/todos">Tasks</a>
-          </li>
-          <li>
-            <a href="#/about">About</a>
-          </li>
-        </ul>
-      </div>
+      <ul className="nav navbar-nav flex flex-row">
+        <li>
+          <a href="/todos">Tasks</a>
+        </li>
+        <li className="ml-4">
+          <a href="/about">About</a>
+        </li>
+      </ul>
     </div>
   </nav>
 );
