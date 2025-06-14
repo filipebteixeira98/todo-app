@@ -1,5 +1,6 @@
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -12,14 +13,11 @@ module.exports = {
     contentBase: './public'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
     alias: {
       modules: __dirname + '/node_modules'
     }
   },
-  plugins: [
-    new ExtractTextPlugin('app.css')
-  ],
   module: {
     rules: [
       {
@@ -28,19 +26,24 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env', '@babel/preset-react'],
             plugins: ['@babel/plugin-proposal-object-rest-spread']
           }
         }
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
-        loader: 'file'
+        loader: 'file-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'app.css'
+    })
+  ]
 }
