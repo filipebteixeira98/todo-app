@@ -8,7 +8,7 @@ export default (props) => {
 
     return list.map((todo) => (
       <tr key={todo._id}>
-        <td>{todo.description}</td>
+        <td className={todo.done ? "text-muted" : ""}>{todo.description}</td>
         <td>
           <IconButton
             style="success"
