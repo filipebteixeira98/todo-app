@@ -23,6 +23,10 @@ export default class Todo extends Component {
 
     this.handleRemove = this.handleRemove.bind(this);
 
+    this.handleMarkAsDone = this.handleMarkAsDone.bind(this);
+
+    this.handleMarkAsPending = this.handleMarkAsPending.bind(this);
+
     this.refresh();
   }
 
