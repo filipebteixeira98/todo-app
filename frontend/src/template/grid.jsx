@@ -10,7 +10,7 @@ export default class Grid extends Component {
 
     cols
       ? cols.forEach((item, index) => {
-          if (item) classes += `col-${devices[index]}-${item}`;
+          if (item) classes += ` col-${devices[index]}-${item}`;
         })
       : null;
 

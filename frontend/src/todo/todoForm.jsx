@@ -4,7 +4,7 @@ import Grid from "../template/grid";
 import IconButton from "../template/iconButton";
 
 export default (props) => (
-  <div role="form" className="todoForm">
+  <div role="form" className="todoForm row">
     <Grid cols="12 9 10">
       <input
         id="description"
